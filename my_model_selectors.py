@@ -62,7 +62,7 @@ class SelectorConstant(ModelSelector):
 
 
 class SelectorBIC(ModelSelector):
-    """ select the model with the lowest Bayesian Information Criterion(BIC) score
+    """ select the model with the lowest Bayesian information Criterion(BIC) score
 
     http://www2.imm.dtu.dk/courses/02433/doc/ch6_slides.pdf
     Bayesian information criteria: BIC = -2 * logL + p * logN
@@ -86,7 +86,7 @@ class SelectorBIC(ModelSelector):
         warnings.filterwarnings("ignore", category=DeprecationWarning)
 
         try:
-            best_score = float("Inf")
+            best_score = float("inf")
             best_model = None
             for n_components in range(self.min_n_components, self.max_n_components + 1):
                 score, model = self.bic_score(n_components)
@@ -100,7 +100,7 @@ class SelectorBIC(ModelSelector):
 
 
 class SelectorDIC(ModelSelector):
-    ''' select best model based on Discriminative Information Criterion
+    ''' select best model based on Discriminative information Criterion
 
     Biem, Alain. "A model selection criterion for classification: Application to hmm topology optimization."
     Document Analysis and Recognition, 2003. Proceedings. Seventh International Conference on. IEEE, 2003.
@@ -122,7 +122,7 @@ class SelectorDIC(ModelSelector):
         warnings.filterwarnings("ignore", category=DeprecationWarning)
 
         try:
-            best_score = float("-Inf")
+            best_score = float("-inf")
             best_model = None
             for n_components in range(self.min_n_components, self.max_n_components + 1):
                 score, model = self.dic_score(n_components)
@@ -157,7 +157,7 @@ class SelectorCV(ModelSelector):
         warnings.filterwarnings("ignore", category=DeprecationWarning)
 
         try:
-            best_score = float("-Inf")
+            best_score = float("-inf")
             best_model = None
             for n_components in range(self.min_n_components, self.max_n_components + 1):
                 score, model = self.cv_score(n_components)
